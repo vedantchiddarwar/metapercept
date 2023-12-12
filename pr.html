@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meat name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-top: 5%;
+                font-size: 12pt;
+            }
+
+            th,
+            td {
+                border: 1pt solid #D8D9DA;
+                padding: 10px;
+                text-align: center;
+            }
+
+            th {
+                background-color: #D6EFED;
+            }
+        </style>
+</head>
+
+<body>
+
+    <table id="EmployeeTable">
+        <thead>
+            <tr>
+                <th>Employee Name</th>
+                <th>Designation</th>
+                <th>Date of Joining</th>
+                <th>Address</th>
+                <th>Salary</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        var employees = [
+            { Name: 'John Sharma', Designation: 'Technical Writer', DateofJoining: '01-12-2023', address: 'Pune', salary: '600000' },
+            { Name: 'Ram Kapoor', Designation: 'Technical Writer', DateofJoining: '30-11-2023', address: 'Pune', salary: '200000' },
+            { Name: 'Mandar Smith', Designation: 'Software Developer', DateofJoining: '29-11-2023', address: 'Pune', salary: '600000' },
+            { Name: 'Virat Patil', Designation: 'Technical Writer', DateofJoining: '28-11-2023', address: 'Pune', salary: '600000' }
+
+        ];
+        function displayemployees() {
+            var tableBody = document.getElementById('EmployeeTable').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = '';
+
+            employees.forEach(function (employee) {
+                if (employee.Designation === 'Technical Writer' && employee.salary > 500000 && employee.salary < 700000) {
+                    var row = tableBody.insertRow();
+                    row.insertCell(0).innerHTML = employee.Name;
+                    row.insertCell(1).innerHTML = employee.Designation;
+                    row.insertCell(2).innerHTML = employee.DateofJoining;
+                }
+            });
+
+
+        }
+
+        displayemployees();
+    </script>
+
+</body>
+
+
+
+</html>
